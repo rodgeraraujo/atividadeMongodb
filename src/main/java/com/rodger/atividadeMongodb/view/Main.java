@@ -19,7 +19,7 @@ public class Main {
 //
 //        dao.salvar(new Pessoa("222.222.222-02", "Maria", 19));
 //
-//        System.out.println(dao.listar());
+//        System.out.println(dao.listar_venda());
 //
 //        System.out.println(dao.buscarPorCpf("XXX"));
 //
@@ -28,7 +28,7 @@ public class Main {
 
         VendaDao dao = new VendaDao();
 
-        System.out.println(dao.listar());
+        System.out.println(dao.listar_venda());
 
 //        Produto produto1 = new Produto(1, "Teclado", 30);
 //        Produto produto2 = new Produto(2, "Mouse", 20);
@@ -42,7 +42,7 @@ public class Main {
 //
 //        Venda venda = new Venda(1, itens, LocalDateTime.now());
 //
-//        dao.salvar(venda);
+//        dao.salvar_venda(venda);
 
 
     }
