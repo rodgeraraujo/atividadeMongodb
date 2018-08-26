@@ -1,11 +1,11 @@
 package com.rodger.atividadeMongodb.view;
 
-import com.ifpb.mongodb.dao.PessoaDao;
-import com.ifpb.mongodb.dao.VendaDao;
-import com.ifpb.mongodb.model.ItemVenda;
-import com.ifpb.mongodb.model.Pessoa;
-import com.ifpb.mongodb.model.Produto;
-import com.ifpb.mongodb.model.Venda;
+import com.rodger.atividadeMongodb.dao.PessoaDao;
+import com.rodger.atividadeMongodb.dao.VendaDao;
+import com.rodger.atividadeMongodb.model.ItemVenda;
+import com.rodger.atividadeMongodb.model.Pessoa;
+import com.rodger.atividadeMongodb.model.Produto;
+import com.rodger.atividadeMongodb.model.Venda;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

@@ -1,7 +1,7 @@
 package com.rodger.atividadeMongodb.dao;
 
-import com.ifpb.mongodb.database.MongoConnection;
-import com.ifpb.mongodb.model.Pessoa;
+import com.rodger.atividadeMongodb.database.MongoConnection;
+import com.rodger.atividadeMongodb.model.Pessoa;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.result.DeleteResult;

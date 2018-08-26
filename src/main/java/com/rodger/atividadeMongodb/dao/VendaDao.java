@@ -1,7 +1,7 @@
 package com.rodger.atividadeMongodb.dao;
 
-import com.ifpb.mongodb.database.MongoConnectionPojo;
-import com.ifpb.mongodb.model.Venda;
+import com.rodger.atividadeMongodb.database.MongoConnectionPojo;
+import com.rodger.atividadeMongodb.model.Venda;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 
