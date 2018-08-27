@@ -1,16 +1,19 @@
 package com.rodger.atividadeMongodb.dao;
 
 import com.mongodb.client.result.DeleteResult;
+import com.mongodb.client.result.UpdateResult;
 import com.rodger.atividadeMongodb.database.MongoConnectionPojo;
 import com.rodger.atividadeMongodb.model.ItemVenda;
 import com.rodger.atividadeMongodb.model.Venda;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
+import org.bson.Document;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Updates.push;
 
 public class VendaDao {
 
@@ -25,6 +28,7 @@ public class VendaDao {
         collection.insertOne(venda);
     }
 
+    //lista todas as vendas, caso exista
     public List<Venda> listar_venda(){
         MongoCursor cursor = collection.find().iterator();
 
@@ -54,6 +58,15 @@ public class VendaDao {
 
     //insere um ítem de venda em uma venda, caso ela exista
     public boolean insereItem_venda(int codigo, ItemVenda item) {
-        return Boolean.parseBoolean(null + "Not work yet :(");
+        if  (buscar_venda(codigo) != null) {
+            UpdateResult result = collection.updateOne(eq("codigo", codigo),
+                                                       push("itens", new Document("produto", item.getProduto())
+                                                       .append("quantidade", item.getQuantidade())));
+            return result.getModifiedCount() > 0;
+        }
+
+        return false;
+
     }
+
 }
