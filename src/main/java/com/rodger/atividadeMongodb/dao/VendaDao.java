@@ -1,5 +1,6 @@
 package com.rodger.atividadeMongodb.dao;
 
+import com.mongodb.client.model.IndexOptions;
 import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
 import com.rodger.atividadeMongodb.database.MongoConnectionPojo;
@@ -22,6 +23,11 @@ public class VendaDao {
     public VendaDao(){
         collection = new MongoConnectionPojo()
                 .getCollection("Venda", Venda.class);
+
+        collection.createIndex(new Document()
+                        .append("codigo", 1),
+                new IndexOptions().unique(true)
+        );
     }
 
     public void salvar_venda(Venda venda){
